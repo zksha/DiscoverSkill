@@ -1,0 +1,1360 @@
+{
+  "version": 1,
+  "generation": 24,
+  "saved_at": "2026-05-15T02:11:45.474094",
+  "best_group": {
+    "iteration": 20,
+    "reward": 0.5,
+    "skill_ids": [
+      "greedy_step_toward_win",
+      "route_to_push_side",
+      "complete_win_via_is_win_anchor",
+      "chain_of_thought"
+    ],
+    "skill_names": [
+      "greedy_step_toward_win",
+      "route_to_push_side",
+      "complete_win_via_is_win_anchor",
+      "chain_of_thought"
+    ],
+    "task_prompt": "  env/make_win#no_ball_win  →  reward=1.00\n  env/two_room-break_stop-make_win-distr_rule  →  reward=1.00\n  env/two_room-make_you-make_win  →  reward=1.00\n  env/two_room-goto_win-distr_rule  →  reward=1.00\n  env/two_room-break_stop-make_win  →  reward=1.00\n  env/make_win-distr_rule#no_ball_win  →  reward=0.00\n  env/make_win-distr_obj#no_ball_win  →  reward=0.00\n  env/two_room-maybe_break_stop-goto_win-distr_obj-irrelevant_rule  →  reward=0.00\n  env/two_room-make_win-distr_obj_rule  →  reward=0.00\n  env/goto_win-distr_win_rule  →  reward=0.00"
+  },
+  "skills": {
+    "analogical_reasoning": {
+      "id": "analogical_reasoning",
+      "name": "analogical_reasoning",
+      "description": "Map unfamiliar problems onto familiar domains to leverage existing knowledge",
+      "V": 0.0,
+      "N": 5,
+      "created_at": "2026-05-14T06:33:09.146492",
+      "logs": [
+        {
+          "iter": 2,
+          "task_id": "baba_d01c5a53",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 3,
+          "task_id": "baba_1d63d1da",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 4,
+          "task_id": "baba_bc83627b",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 5,
+          "task_id": "baba_efb72c1c",
+          "reward": 0.1,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 6,
+          "task_id": "baba_472a08ad",
+          "reward": 0.1,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "assemble_is_win_when_missing": {
+      "id": "assemble_is_win_when_missing",
+      "name": "assemble_is_win_when_missing",
+      "description": "When no WIN rule exists, form '<NOUN> IS WIN' using available text safely.",
+      "V": 0.03,
+      "N": 1,
+      "created_at": "2026-05-14T23:16:32.863618",
+      "logs": [
+        {
+          "iter": 19,
+          "task_id": "baba_a2e9c7c3",
+          "reward": 0.3,
+          "contribution": 1.0,
+          "allocated_reward": 0.3,
+          "V_after": 0.03,
+          "V_updated": true
+        }
+      ]
+    },
+    "assemble_win_rule": {
+      "id": "assemble_win_rule",
+      "name": "assemble_win_rule",
+      "description": "Plan and execute pushes to form '<NOUN> IS WIN' while preserving 'YOU'.",
+      "V": 0.0,
+      "N": 1,
+      "created_at": "2026-05-14T22:28:04.967714",
+      "logs": [
+        {
+          "iter": 13,
+          "task_id": "baba_4c1945bb",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "attach_noun_to_is_win_vertical": {
+      "id": "attach_noun_to_is_win_vertical",
+      "name": "attach_noun_to_is_win_vertically",
+      "description": "Use existing 'IS WIN' row: push nearest noun-text vertically to complete it.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-14T23:52:59.864495",
+      "logs": []
+    },
+    "break_blocking_is_stop_at_sour": {
+      "id": "break_blocking_is_stop_at_sour",
+      "name": "break_blocking_is_stop_at_source",
+      "description": "When a wall column blocks you, dislodge 'IS' or 'STOP' from 'X IS STOP'.",
+      "V": 0.015,
+      "N": 1,
+      "created_at": "2026-05-14T23:52:59.864280",
+      "logs": [
+        {
+          "iter": 16,
+          "task_id": "baba_2a60ea76",
+          "reward": 0.3,
+          "contribution": 0.5,
+          "allocated_reward": 0.15,
+          "V_after": 0.015,
+          "V_updated": true
+        }
+      ]
+    },
+    "break_is_stop_sentence": {
+      "id": "break_is_stop_sentence",
+      "name": "break_is_stop_sentence",
+      "description": "Break 'X IS STOP' by pushing STOP/IS vertically out of the sentence.",
+      "V": 0.0009090909090909091,
+      "N": 1,
+      "created_at": "2026-05-14T23:44:14.508310",
+      "logs": [
+        {
+          "iter": 19,
+          "task_id": "baba_a2e9c7c3",
+          "reward": 0.3,
+          "contribution": 0.030303030303030304,
+          "allocated_reward": 0.00909090909090909,
+          "V_after": 0.0009090909090909091,
+          "V_updated": true
+        }
+      ]
+    },
+    "chain_of_thought": {
+      "id": "chain_of_thought",
+      "name": "chain_of_thought",
+      "description": "Break complex problems into explicit sequential reasoning steps",
+      "V": 0.010000000000000002,
+      "N": 2,
+      "created_at": "2026-05-14T06:33:09.146526",
+      "logs": [
+        {
+          "iter": 7,
+          "task_id": "baba_465918e2",
+          "reward": 0.1,
+          "contribution": 1.0,
+          "allocated_reward": 0.1,
+          "V_after": 0.010000000000000002,
+          "V_updated": true
+        },
+        {
+          "iter": 20,
+          "task_id": "baba_c6ee255a",
+          "reward": 0.5,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.010000000000000002,
+          "V_updated": false
+        }
+      ]
+    },
+    "complete_is_win_with_subject": {
+      "id": "complete_is_win_with_subject",
+      "name": "complete_is_win_with_subject",
+      "description": "Find an existing 'IS WIN' alignment, then route and push a noun-text to complete it.",
+      "V": 0.052153846153846155,
+      "N": 2,
+      "created_at": "2026-05-14T23:32:18.732648",
+      "logs": [
+        {
+          "iter": 17,
+          "task_id": "baba_0cb39ac0",
+          "reward": 0.4,
+          "contribution": 0.6153846153846154,
+          "allocated_reward": 0.24615384615384617,
+          "V_after": 0.02461538461538462,
+          "V_updated": true
+        },
+        {
+          "iter": 22,
+          "task_id": "baba_c2d1229d",
+          "reward": 0.3,
+          "contribution": 1.0,
+          "allocated_reward": 0.3,
+          "V_after": 0.052153846153846155,
+          "V_updated": true
+        }
+      ]
+    },
+    "complete_win_via_is_win_anchor": {
+      "id": "complete_win_via_is_win_anchor",
+      "name": "complete_win_via_is_win_anchor",
+      "description": "Use any 'IS WIN' pair; bring nearest safe noun-text to its left.",
+      "V": 0.00967741935483871,
+      "N": 1,
+      "created_at": "2026-05-14T23:44:14.508700",
+      "logs": [
+        {
+          "iter": 20,
+          "task_id": "baba_c6ee255a",
+          "reward": 0.5,
+          "contribution": 0.1935483870967742,
+          "allocated_reward": 0.0967741935483871,
+          "V_after": 0.00967741935483871,
+          "V_updated": true
+        }
+      ]
+    },
+    "confirm_win_target_or_form_one": {
+      "id": "confirm_win_target_or_form_one",
+      "name": "confirm_win_target_or_form_one",
+      "description": "Target actual WIN objects; if none reachable, commit to forming '<NOUN> IS WIN'.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-14T23:52:59.863475",
+      "logs": []
+    },
+    "create_alternate_win_condition": {
+      "id": "create_alternate_win_condition",
+      "name": "create_alternate_win_conditions",
+      "description": "Manipulate rules creatively to form new 'win' conditions when blocked.",
+      "V": 0.0,
+      "N": 2,
+      "created_at": "2026-05-14T21:00:18.860185",
+      "logs": [
+        {
+          "iter": 10,
+          "task_id": "baba_764395d0",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 16,
+          "task_id": "baba_2a60ea76",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "decompose_problem": {
+      "id": "decompose_problem",
+      "name": "decompose_problem",
+      "description": "Split a hard question into smaller, independently solvable sub-problems",
+      "V": 0.019000000000000003,
+      "N": 4,
+      "created_at": "2026-05-14T06:33:09.146571",
+      "logs": [
+        {
+          "iter": 1,
+          "task_id": "baba_c9c37226",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 4,
+          "task_id": "baba_bc83627b",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 5,
+          "task_id": "baba_efb72c1c",
+          "reward": 0.1,
+          "contribution": 1.0,
+          "allocated_reward": 0.1,
+          "V_after": 0.010000000000000002,
+          "V_updated": true
+        },
+        {
+          "iter": 6,
+          "task_id": "baba_472a08ad",
+          "reward": 0.1,
+          "contribution": 1.0,
+          "allocated_reward": 0.1,
+          "V_after": 0.019000000000000003,
+          "V_updated": true
+        }
+      ]
+    },
+    "detect_stall_and_replan": {
+      "id": "detect_stall_and_replan",
+      "name": "detect_stall_and_replan",
+      "description": "Detect no progress and replan: switch targets or attempt a rule change.",
+      "V": 0.0,
+      "N": 2,
+      "created_at": "2026-05-14T22:50:31.667157",
+      "logs": [
+        {
+          "iter": 14,
+          "task_id": "baba_7069bf3d",
+          "reward": 0.5,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 15,
+          "task_id": "baba_f2fcc8ce",
+          "reward": 0.4,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "determine_win_condition": {
+      "id": "determine_win_condition",
+      "name": "determine_win_condition",
+      "description": "Identify which object is WIN; if none, commit to creating a WIN rule.",
+      "V": 0.0030555555555555557,
+      "N": 2,
+      "created_at": "2026-05-14T22:28:04.967217",
+      "logs": [
+        {
+          "iter": 10,
+          "task_id": "baba_764395d0",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 18,
+          "task_id": "baba_93e5e868",
+          "reward": 0.2,
+          "contribution": 0.15277777777777776,
+          "allocated_reward": 0.030555555555555555,
+          "V_after": 0.0030555555555555557,
+          "V_updated": true
+        }
+      ]
+    },
+    "disable_stop_blockade": {
+      "id": "disable_stop_blockade",
+      "name": "disable_stop_blockade",
+      "description": "Detect 'X IS STOP' and plan minimal edits to pass or repurpose it.",
+      "V": 0.0,
+      "N": 2,
+      "created_at": "2026-05-14T22:28:04.967840",
+      "logs": [
+        {
+          "iter": 13,
+          "task_id": "baba_4c1945bb",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 16,
+          "task_id": "baba_2a60ea76",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "disambiguate_text_and_objects": {
+      "id": "disambiguate_text_and_objects",
+      "name": "disambiguate_text_and_objects",
+      "description": "Separate text from objects; target f-objects for WIN, text only for rule edits.",
+      "V": 0.0,
+      "N": 2,
+      "created_at": "2026-05-14T22:50:31.666417",
+      "logs": [
+        {
+          "iter": 11,
+          "task_id": "baba_ffa35eb4",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 12,
+          "task_id": "baba_1813dede",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "explore_adjacent_blocks": {
+      "id": "explore_adjacent_blocks",
+      "name": "explore_adjacent_blocks",
+      "description": "Assess nearby blocks for useful rule manipulations or paths to win.",
+      "V": 0.0017094017094017094,
+      "N": 2,
+      "created_at": "2026-05-14T21:04:37.876083",
+      "logs": [
+        {
+          "iter": 11,
+          "task_id": "baba_ffa35eb4",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 17,
+          "task_id": "baba_0cb39ac0",
+          "reward": 0.4,
+          "contribution": 0.04273504273504273,
+          "allocated_reward": 0.017094017094017092,
+          "V_after": 0.0017094017094017094,
+          "V_updated": true
+        }
+      ]
+    },
+    "extract_you_and_win_targets": {
+      "id": "extract_you_and_win_targets",
+      "name": "extract_you_and_win_targets",
+      "description": "Extract YOU objects and all WIN object types from active rules; ignore text targets.",
+      "V": 0.014666666666666665,
+      "N": 2,
+      "created_at": "2026-05-14T23:16:32.862753",
+      "logs": [
+        {
+          "iter": 13,
+          "task_id": "baba_4c1945bb",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 22,
+          "task_id": "baba_c2d1229d",
+          "reward": 0.3,
+          "contribution": 0.4888888888888888,
+          "allocated_reward": 0.14666666666666664,
+          "V_after": 0.014666666666666665,
+          "V_updated": true
+        }
+      ]
+    },
+    "greedy_step_toward_win": {
+      "id": "greedy_step_toward_win",
+      "name": "greedy_step_toward_win",
+      "description": "Pick the next step toward the nearest WIN object, avoiding STOP tiles.",
+      "V": 0.05,
+      "N": 2,
+      "created_at": "2026-05-14T22:50:31.666939",
+      "logs": [
+        {
+          "iter": 14,
+          "task_id": "baba_7069bf3d",
+          "reward": 0.5,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 20,
+          "task_id": "baba_c6ee255a",
+          "reward": 0.5,
+          "contribution": 1.0,
+          "allocated_reward": 0.5,
+          "V_after": 0.05,
+          "V_updated": true
+        }
+      ]
+    },
+    "identify_block_types": {
+      "id": "identify_block_types",
+      "name": "identify_block_types",
+      "description": "Classify blocks by their properties (e.g., movable, stop) to plan actions.",
+      "V": 0.0,
+      "N": 2,
+      "created_at": "2026-05-14T21:00:18.859865",
+      "logs": [
+        {
+          "iter": 8,
+          "task_id": "baba_8c96e441",
+          "reward": 0.0,
+          "contribution": 1.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": true
+        },
+        {
+          "iter": 9,
+          "task_id": "baba_d87fdcfd",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "identify_paths_to_win": {
+      "id": "identify_paths_to_win",
+      "name": "identify_paths_to_win",
+      "description": "Chart the best route to reach the win condition based on current rules.",
+      "V": 0.0,
+      "N": 4,
+      "created_at": "2026-05-14T21:04:37.876200",
+      "logs": [
+        {
+          "iter": 10,
+          "task_id": "baba_764395d0",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 12,
+          "task_id": "baba_1813dede",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 15,
+          "task_id": "baba_f2fcc8ce",
+          "reward": 0.4,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 17,
+          "task_id": "baba_0cb39ac0",
+          "reward": 0.4,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "manipulate_rule_definitions": {
+      "id": "manipulate_rule_definitions",
+      "name": "manipulate_rule_definitions",
+      "description": "Change existing rules to open pathways or create new win conditions.",
+      "V": 0.0018181818181818182,
+      "N": 3,
+      "created_at": "2026-05-14T21:04:37.875819",
+      "logs": [
+        {
+          "iter": 10,
+          "task_id": "baba_764395d0",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 14,
+          "task_id": "baba_7069bf3d",
+          "reward": 0.5,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 19,
+          "task_id": "baba_a2e9c7c3",
+          "reward": 0.3,
+          "contribution": 0.06060606060606061,
+          "allocated_reward": 0.01818181818181818,
+          "V_after": 0.0018181818181818182,
+          "V_updated": true
+        }
+      ]
+    },
+    "plan_text_push_to_target": {
+      "id": "plan_text_push_to_target",
+      "name": "plan_text_push_to_target",
+      "description": "Plan minimal safe pushes to move a text block onto a specified target tile.",
+      "V": 0.0,
+      "N": 1,
+      "created_at": "2026-05-14T23:32:18.733457",
+      "logs": [
+        {
+          "iter": 14,
+          "task_id": "baba_7069bf3d",
+          "reward": 0.5,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "prior_knowledge_retrieval": {
+      "id": "prior_knowledge_retrieval",
+      "name": "prior_knowledge_retrieval",
+      "description": "Systematically recall domain knowledge before reasoning to enrich context",
+      "V": 0.0,
+      "N": 6,
+      "created_at": "2026-05-14T06:33:09.146594",
+      "logs": [
+        {
+          "iter": 3,
+          "task_id": "baba_1d63d1da",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 7,
+          "task_id": "baba_465918e2",
+          "reward": 0.1,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 8,
+          "task_id": "baba_8c96e441",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 9,
+          "task_id": "baba_d87fdcfd",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 12,
+          "task_id": "baba_1813dede",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 15,
+          "task_id": "baba_f2fcc8ce",
+          "reward": 0.4,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "route_to_push_side": {
+      "id": "route_to_push_side",
+      "name": "route_to_push_side",
+      "description": "Route to the correct side of a block to push in desired direction.",
+      "V": 0.0006666666666666665,
+      "N": 2,
+      "created_at": "2026-05-14T23:44:14.508820",
+      "logs": [
+        {
+          "iter": 20,
+          "task_id": "baba_c6ee255a",
+          "reward": 0.5,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 22,
+          "task_id": "baba_c2d1229d",
+          "reward": 0.3,
+          "contribution": 0.02222222222222222,
+          "allocated_reward": 0.006666666666666665,
+          "V_after": 0.0006666666666666665,
+          "V_updated": true
+        }
+      ]
+    },
+    "select_viable_subject_text": {
+      "id": "select_viable_subject_text",
+      "name": "select_viable_subject_text",
+      "description": "Select the closest movable noun-text as subject for a new 'X IS WIN' rule.",
+      "V": 0.04000000000000001,
+      "N": 1,
+      "created_at": "2026-05-14T23:32:18.733243",
+      "logs": [
+        {
+          "iter": 15,
+          "task_id": "baba_f2fcc8ce",
+          "reward": 0.4,
+          "contribution": 1.0,
+          "allocated_reward": 0.4,
+          "V_after": 0.04000000000000001,
+          "V_updated": true
+        }
+      ]
+    },
+    "self_critique": {
+      "id": "self_critique",
+      "name": "self_critique",
+      "description": "Steelman the opposite answer before finalizing to catch blind spots",
+      "V": 0.015,
+      "N": 10,
+      "created_at": "2026-05-14T06:33:09.146611",
+      "logs": [
+        {
+          "iter": 1,
+          "task_id": "baba_c9c37226",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 2,
+          "task_id": "baba_d01c5a53",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 3,
+          "task_id": "baba_1d63d1da",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 4,
+          "task_id": "baba_bc83627b",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 5,
+          "task_id": "baba_efb72c1c",
+          "reward": 0.1,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 6,
+          "task_id": "baba_472a08ad",
+          "reward": 0.1,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 8,
+          "task_id": "baba_8c96e441",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 9,
+          "task_id": "baba_d87fdcfd",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 11,
+          "task_id": "baba_ffa35eb4",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 16,
+          "task_id": "baba_2a60ea76",
+          "reward": 0.3,
+          "contribution": 0.5,
+          "allocated_reward": 0.15,
+          "V_after": 0.015,
+          "V_updated": true
+        }
+      ]
+    },
+    "sequential_rule_manipulation": {
+      "id": "sequential_rule_manipulation",
+      "name": "sequential_rule_manipulation",
+      "description": "Break down rules into steps to strategically move towards desired conditions.",
+      "V": 0.0025000000000000005,
+      "N": 5,
+      "created_at": "2026-05-14T21:00:18.860286",
+      "logs": [
+        {
+          "iter": 7,
+          "task_id": "baba_465918e2",
+          "reward": 0.1,
+          "contribution": 0.25,
+          "allocated_reward": 0.025,
+          "V_after": 0.0025000000000000005,
+          "V_updated": true
+        },
+        {
+          "iter": 8,
+          "task_id": "baba_8c96e441",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0025000000000000005,
+          "V_updated": false
+        },
+        {
+          "iter": 9,
+          "task_id": "baba_d87fdcfd",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0025000000000000005,
+          "V_updated": false
+        },
+        {
+          "iter": 12,
+          "task_id": "baba_1813dede",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0025000000000000005,
+          "V_updated": false
+        },
+        {
+          "iter": 21,
+          "task_id": "baba_8930c7e1",
+          "reward": 0.4,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0025000000000000005,
+          "V_updated": false
+        }
+      ]
+    },
+    "step_toward_nearest_win_safely": {
+      "id": "step_toward_nearest_win_safely",
+      "name": "step_toward_nearest_win_safely",
+      "description": "Pick the next step toward the nearest WIN f-object, avoiding STOP collisions.",
+      "V": 0.0,
+      "N": 2,
+      "created_at": "2026-05-14T23:16:32.863139",
+      "logs": [
+        {
+          "iter": 13,
+          "task_id": "baba_4c1945bb",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 23,
+          "task_id": "baba_ba831015",
+          "reward": 0.5,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "test_skill": {
+      "id": "test_skill",
+      "name": "test_skill",
+      "description": "Test a new invented skill.",
+      "V": 0.0,
+      "N": 5,
+      "created_at": "2026-05-14T17:54:31.377375",
+      "logs": [
+        {
+          "iter": 3,
+          "task_id": "baba_1d63d1da",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 4,
+          "task_id": "baba_bc83627b",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 5,
+          "task_id": "baba_efb72c1c",
+          "reward": 0.1,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 6,
+          "task_id": "baba_472a08ad",
+          "reward": 0.1,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 7,
+          "task_id": "baba_465918e2",
+          "reward": 0.1,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "verify_answer": {
+      "id": "verify_answer",
+      "name": "verify_answer",
+      "description": "Actively cross-check your answer for consistency and common errors",
+      "V": 0.0,
+      "N": 3,
+      "created_at": "2026-05-14T06:33:09.146625",
+      "logs": [
+        {
+          "iter": 1,
+          "task_id": "baba_c9c37226",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 2,
+          "task_id": "baba_d01c5a53",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 11,
+          "task_id": "baba_ffa35eb4",
+          "reward": 0.0,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "assess_win_reachability_then_c": {
+      "id": "assess_win_reachability_then_c",
+      "name": "assess_win_reachability_then_choose_make_win",
+      "description": "Check if any WIN object is reachable; else switch to creating a local WIN rule.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-15T00:12:26.627709",
+      "logs": []
+    },
+    "anchor_is_win_and_attach_noun": {
+      "id": "anchor_is_win_and_attach_noun",
+      "name": "anchor_is_win_and_attach_noun_with_push_route",
+      "description": "Use existing 'IS WIN' as anchor; route to noun-text’s push-side and attach efficiently.",
+      "V": 0.056000000000000015,
+      "N": 3,
+      "created_at": "2026-05-15T00:12:26.627967",
+      "logs": [
+        {
+          "iter": 17,
+          "task_id": "baba_0cb39ac0",
+          "reward": 0.4,
+          "contribution": 1.0,
+          "allocated_reward": 0.4,
+          "V_after": 0.04000000000000001,
+          "V_updated": true
+        },
+        {
+          "iter": 18,
+          "task_id": "baba_93e5e868",
+          "reward": 0.2,
+          "contribution": 1.0,
+          "allocated_reward": 0.2,
+          "V_after": 0.056000000000000015,
+          "V_updated": true
+        },
+        {
+          "iter": 19,
+          "task_id": "baba_a2e9c7c3",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.056000000000000015,
+          "V_updated": false
+        }
+      ]
+    },
+    "switch_you_to_reachable_actor": {
+      "id": "switch_you_to_reachable_actor",
+      "name": "switch_you_to_reachable_actor_then_finish",
+      "description": "When blocked or in two rooms, change 'X IS YOU', then make WIN.",
+      "V": 0.0,
+      "N": 1,
+      "created_at": "2026-05-15T00:12:26.628106",
+      "logs": [
+        {
+          "iter": 24,
+          "task_id": "baba_eac6d28e",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "break_is_stop_via_vertical_nud": {
+      "id": "break_is_stop_via_vertical_nud",
+      "name": "break_is_stop_via_vertical_nudge",
+      "description": "Break 'X IS STOP' by nudging IS or STOP vertically; route to the push side.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-15T00:23:21.196268",
+      "logs": []
+    },
+    "two_room_safe_you_switch": {
+      "id": "two_room_safe_you_switch",
+      "name": "two_room_safe_you_switch",
+      "description": "In two rooms, reassign YOU to a reachable noun without dropping control.",
+      "V": 0.0,
+      "N": 1,
+      "created_at": "2026-05-15T00:23:21.199066",
+      "logs": [
+        {
+          "iter": 24,
+          "task_id": "baba_eac6d28e",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "prefer_global_subject_for_remo": {
+      "id": "prefer_global_subject_for_remo",
+      "name": "prefer_global_subject_for_remote_win",
+      "description": "Prefer ubiquitous nearby nouns (e.g., WALL, DOOR) to create '<NOUN> IS WIN'.",
+      "V": 0.0,
+      "N": 1,
+      "created_at": "2026-05-15T00:23:21.199262",
+      "logs": [
+        {
+          "iter": 18,
+          "task_id": "baba_93e5e868",
+          "reward": 0.2,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "break_stop_minimally_then_resu": {
+      "id": "break_stop_minimally_then_resu",
+      "name": "break_stop_minimally_then_resume",
+      "description": "Detect a STOP wall blocking progress; break 'X IS STOP' with one nudge, then continue.",
+      "V": 0.010000000000000002,
+      "N": 1,
+      "created_at": "2026-05-15T00:41:02.791764",
+      "logs": [
+        {
+          "iter": 21,
+          "task_id": "baba_8930c7e1",
+          "reward": 0.4,
+          "contribution": 0.25,
+          "allocated_reward": 0.1,
+          "V_after": 0.010000000000000002,
+          "V_updated": true
+        }
+      ]
+    },
+    "assemble_is_win_near_subject": {
+      "id": "assemble_is_win_near_subject",
+      "name": "assemble_is_win_near_subject",
+      "description": "When anchor unusable, move IS and WIN to the chosen noun to win.",
+      "V": 0.0,
+      "N": 1,
+      "created_at": "2026-05-15T00:41:02.792349",
+      "logs": [
+        {
+          "iter": 21,
+          "task_id": "baba_8930c7e1",
+          "reward": 0.4,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        }
+      ]
+    },
+    "go_to_reachable_win_before_edi": {
+      "id": "go_to_reachable_win_before_edi",
+      "name": "go_to_reachable_win_before_editing",
+      "description": "If any WIN object is reachable now, navigate to it before editing rules.",
+      "V": 0.02827777777777778,
+      "N": 2,
+      "created_at": "2026-05-15T00:41:02.792681",
+      "logs": [
+        {
+          "iter": 18,
+          "task_id": "baba_93e5e868",
+          "reward": 0.2,
+          "contribution": 0.027777777777777776,
+          "allocated_reward": 0.005555555555555556,
+          "V_after": 0.0005555555555555556,
+          "V_updated": true
+        },
+        {
+          "iter": 23,
+          "task_id": "baba_ba831015",
+          "reward": 0.5,
+          "contribution": 0.5555555555555556,
+          "allocated_reward": 0.2777777777777778,
+          "V_after": 0.02827777777777778,
+          "V_updated": true
+        }
+      ]
+    },
+    "plan_and_execute_subject_attac": {
+      "id": "plan_and_execute_subject_attac",
+      "name": "plan_and_execute_subject_attach_to_is",
+      "description": "Plan and execute pushes to place a chosen noun-text exactly left of IS.",
+      "V": 0.03,
+      "N": 2,
+      "created_at": "2026-05-15T00:54:09.384195",
+      "logs": [
+        {
+          "iter": 22,
+          "task_id": "baba_c2d1229d",
+          "reward": 0.3,
+          "contribution": 0.0,
+          "allocated_reward": 0.0,
+          "V_after": 0.0,
+          "V_updated": false
+        },
+        {
+          "iter": 24,
+          "task_id": "baba_eac6d28e",
+          "reward": 0.3,
+          "contribution": 1.0,
+          "allocated_reward": 0.3,
+          "V_after": 0.03,
+          "V_updated": true
+        }
+      ]
+    },
+    "break_stop_with_vertical_nudge": {
+      "id": "break_stop_with_vertical_nudge",
+      "name": "break_stop_with_vertical_nudge_for_access",
+      "description": "Break 'X IS STOP' via a single vertical nudge to clear access.",
+      "V": 0.002777777777777778,
+      "N": 1,
+      "created_at": "2026-05-15T00:54:09.385559",
+      "logs": [
+        {
+          "iter": 23,
+          "task_id": "baba_ba831015",
+          "reward": 0.5,
+          "contribution": 0.05555555555555555,
+          "allocated_reward": 0.027777777777777776,
+          "V_after": 0.002777777777777778,
+          "V_updated": true
+        }
+      ]
+    },
+    "commit_to_subject_until_attach": {
+      "id": "commit_to_subject_until_attach",
+      "name": "commit_to_subject_until_attachment",
+      "description": "Lock onto one subject and finish the attachment before considering alternatives.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-15T00:54:09.385786",
+      "logs": []
+    },
+    "choose_reachable_subject_near": {
+      "id": "choose_reachable_subject_near",
+      "name": "choose_reachable_subject_near_is_win",
+      "description": "Select a reachable noun-text near 'IS WIN' and commit to attaching it.",
+      "V": 0.020000000000000004,
+      "N": 1,
+      "created_at": "2026-05-15T01:08:52.065374",
+      "logs": [
+        {
+          "iter": 21,
+          "task_id": "baba_8930c7e1",
+          "reward": 0.4,
+          "contribution": 0.5,
+          "allocated_reward": 0.2,
+          "V_after": 0.020000000000000004,
+          "V_updated": true
+        }
+      ]
+    },
+    "attach_subject_via_precise_pus": {
+      "id": "attach_subject_via_precise_pus",
+      "name": "attach_subject_via_precise_push_route",
+      "description": "Compute and follow the exact push route to attach subject to 'IS WIN'.",
+      "V": 0.051000000000000004,
+      "N": 2,
+      "created_at": "2026-05-15T01:08:52.070056",
+      "logs": [
+        {
+          "iter": 23,
+          "task_id": "baba_ba831015",
+          "reward": 0.5,
+          "contribution": 1.0,
+          "allocated_reward": 0.5,
+          "V_after": 0.05,
+          "V_updated": true
+        },
+        {
+          "iter": 24,
+          "task_id": "baba_eac6d28e",
+          "reward": 0.3,
+          "contribution": 0.2,
+          "allocated_reward": 0.06,
+          "V_after": 0.051000000000000004,
+          "V_updated": true
+        }
+      ]
+    },
+    "two_room_switch_you_then_make": {
+      "id": "two_room_switch_you_then_make",
+      "name": "two_room_switch_you_then_make_win",
+      "description": "Switch YOU to a reachable noun in the target room, then make WIN.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-15T01:08:52.070270",
+      "logs": []
+    },
+    "choose_subject_with_existing_o": {
+      "id": "choose_subject_with_existing_o",
+      "name": "choose_subject_with_existing_object",
+      "description": "Choose a noun-text whose matching object exists before forming '<NOUN> IS WIN'.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-15T01:25:23.695662",
+      "logs": []
+    },
+    "surgical_break_stop_then_resum": {
+      "id": "surgical_break_stop_then_resum",
+      "name": "surgical_break_stop_then_resume_goal",
+      "description": "If STOP blocks progress, nudge IS/STOP one tile to break it, then continue.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-15T01:25:23.699130",
+      "logs": []
+    },
+    "target_existing_win_object_ove": {
+      "id": "target_existing_win_object_ove",
+      "name": "target_existing_win_object_over_win_text",
+      "description": "Prefer reachable WIN objects; ignore 'WIN' text and navigate directly to them.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-15T01:25:23.699959",
+      "logs": []
+    },
+    "validate_and_snap_subject_to_i": {
+      "id": "validate_and_snap_subject_to_i",
+      "name": "validate_and_snap_subject_to_is_win",
+      "description": "Validate subject has object, then push it into the slot left of 'IS WIN'.",
+      "V": 0.0,
+      "N": 0,
+      "created_at": "2026-05-15T01:36:43.882029",
+      "logs": []
+    }
+  }
+}

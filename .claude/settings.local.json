@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(python -c ' *)",
+      "Bash(python *)",
+      "WebSearch",
+      "Bash(pip show *)",
+      "Bash(python3 -c ' *)",
+      "Bash(chmod +x *)",
+      "Bash(grep -q \"^\\\\.env$\" .gitignore)",
+      "Bash(ITERATIONS=1 AGENT_MODEL=gpt-5-mini INVENT_MODEL=gpt-5 ./train.sh *)",
+      "Bash(ITERATIONS=1 AGENT_MODEL=gpt-5-nano INVENT_MODEL=gpt-5 ./train.sh *)",
+      "Bash(grep -v \"^$\\\\|pygame\\\\|Gym has\\\\|DeprecationWarning\\\\|deprecated\\\\|timezone\\\\|matplotlib\\\\|font\")",
+      "Bash(dos2unix /home/leah/skillevo/eval.sh)",
+      "Bash(python3 *)",
+      "Bash(pip3 show *)",
+      "Bash(git *)"
+    ]
+  }
+}
