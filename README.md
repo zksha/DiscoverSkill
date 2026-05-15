@@ -78,26 +78,24 @@ INVENT_BASE_URL=https://api.openai.com/v1
 ./train.sh
 ```
 
-Key parameters (override via environment variables):
+Training hyperparameters used in our experiments:
 
-| Variable | Default | Description |
+| Parameter | Value | Description |
 |---|---|---|
-| `ITERATIONS` | 30 | Number of evolution iterations |
-| `GROUP_SIZE` | 4 | Skills sampled per iteration |
-| `N_EVAL` | 10 | Episodes per iteration |
-| `MODEL` | `gpt-4o-mini` | Default model for agent + inventor |
-| `AGENT_MODEL` | — | Override model for agent episodes |
-| `INVENT_MODEL` | — | Override model for skill invention |
-| `INVENT_EVERY` | 2 | Invent new skills every N iterations |
-| `SEED` | 42 | Random seed |
+| `--iterations` | 10 | Number of evolution iterations |
+| `--group-size` | 4 | Skills sampled per iteration |
+| `--n-eval` | 10 | Episodes per iteration |
+| `--n-train` | 10 | Training task count |
+| `--max-steps` | 30 | Game steps per episode |
+| `--invent-every` | 1 | Invent new skills every N iterations |
+| `--n-new` | 3 | New skills proposed per invention round |
+| `--alpha` | 0.1 | EMA learning rate for value update |
+| `--tau` | 2.0 | Initial sampling temperature |
+| `--agent-model` | `gpt-5-mini` | Model for agent episodes |
+| `--invent-model` | `gpt-5` | Model for skill invention and credit assignment |
+| `--seed` | 42 | Random seed |
 
-Example — 50 iterations with separate models:
-
-```bash
-ITERATIONS=50 AGENT_MODEL=gpt-4o-mini INVENT_MODEL=gpt-4o ./train.sh
-```
-
-Logs are written to `logs/train_<timestamp>.log`. Estimated runtime: ~25 s/iter with 10 parallel episodes.
+Logs are written to `logs/train_<timestamp>.log`.
 
 ### Evaluation
 

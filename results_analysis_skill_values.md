@@ -1,10 +1,12 @@
 # Results and Skill Value Analysis — BabaIsYou Evolution
 
+**Training setup:** 10 iterations | group size 4 | 10 episodes/iter | invent every 1 iter | agent: `gpt-5-mini` | inventor: `gpt-5` | α=0.1 | τ=2.0 | seed=42
+
 ---
 
 ## Results
 
-Evaluated on **43 BabaIsYou puzzles**. Without any skill, the agent scores **21.4 ± 0.0** (solve rate). Using the best skill group discovered by SkillEvo, performance rises to **32.8 ± 1.8** — a **+11.4 point** improvement (+53% relative).
+Evaluated on **43 BabaIsYou puzzles**. Without any skill, the agent scores **21.4 ± 0.0** (solve rate). Using the best skill group discovered by DiscoverSkill, performance rises to **32.8 ± 1.8** — a **+11.4 point** improvement (+53% relative).
 
 | Condition | Solve Rate (%) |
 |---|---|
